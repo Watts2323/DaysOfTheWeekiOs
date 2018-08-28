@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="3cf-0C-Zf1" style="IBUITableViewCellStyleDefault" id="BsZ-Dw-9AR">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dayCell" textLabel="3cf-0C-Zf1" style="IBUITableViewCellStyleDefault" id="BsZ-Dw-9AR">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BsZ-Dw-9AR" id="Hvy-82-E0d">
@@ -36,7 +36,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="huW-E3-rdF" kind="show" identifier="toDayVC" id="8mZ-mj-Cau"/>
+                                    <segue destination="huW-E3-rdF" kind="show" identifier="todayDetailVC" id="8mZ-mj-Cau"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -60,9 +60,24 @@
                     <view key="view" contentMode="scaleToFill" id="mhR-KP-IbW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRT-gF-bzI">
+                                <rect key="frame" x="166" y="323" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LRT-gF-bzI" firstAttribute="centerX" secondItem="mhR-KP-IbW" secondAttribute="centerX" id="OHm-63-VA3"/>
+                            <constraint firstItem="LRT-gF-bzI" firstAttribute="centerY" secondItem="mhR-KP-IbW" secondAttribute="centerY" id="jCn-RC-eP6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="jv6-Wl-Gfc"/>
                     </view>
+                    <connections>
+                        <outlet property="dayLabel" destination="LRT-gF-bzI" id="aHF-cI-NLy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSn-jr-qeW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
